@@ -1,0 +1,22 @@
+<p-table [value]="info" [tableStyle]="{'table-layout':'auto'}" [scrollable]="true" scrollHeight="400px">
+  <ng-template pTemplate="header">
+    <tr>
+      <th colspan="7">Personal Info</th>
+      <th colspan="2">Contact Info</th>
+      <th colspan="6">Address</th>
+      <th colspan="2"></th>
+    </tr>
+    <tr>
+      <th *ngFor="let col of cols">
+        {{col.header}}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-info>
+    <tr>
+      <td *ngFor="let col of cols">
+        {{info[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
